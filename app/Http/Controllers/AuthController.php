@@ -50,9 +50,9 @@ class AuthController extends Controller
         $user = User::where('email', $request->email)->first();
 
         if (!$user || !Hash::check($request->password, $user->password)) {
-            return response()->json(['error' => 'Credenciales incorrectas'], 401);
+            return response()->json(['error' => 'Las Credenciales son incorrectas'], 401);
         }
 
-        return response()->json(['message' => 'Autenticación satisfactoria']);
+        return response()->json(['message' => 'Autenticacion satisfactoria']);
     }
 }
